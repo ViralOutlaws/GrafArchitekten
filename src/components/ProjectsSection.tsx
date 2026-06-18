@@ -61,7 +61,7 @@ export default function ProjectsSection() {
           >
             {/* Bild */}
             <Image
-              src={`/images/portfolio/${project.id}.png`}
+              src={`/images/portfolio/${project.id}.PNG`}
               alt={project.name}
               fill
               className="object-cover transition-transform duration-700 ease-out"

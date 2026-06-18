@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
-import ProjectCard from "@/components/ProjectCard";
-import ScrollReveal from "@/components/ScrollReveal";
 import TypewriterText from "@/components/ui/typewriter-text";
-import { featuredProjekte } from "@/data/projekte";
-import ProjectsSection from '@/components/ProjectsSection';
+import ProjectsSection from "@/components/ProjectsSection";
 
 export const metadata: Metadata = {
   title: "graf architekten gmbh | Memmingen",
@@ -13,26 +10,7 @@ export const metadata: Metadata = {
     "Architekturbüro in Memmingen – Wohnungsbau, Gewerbebau, öffentliche Bauten. Seit 1994.",
 };
 
-const SERVICES = [
-  "Häuser + Wohnungsbau",
-  "Büro + Verwaltung",
-  "Industrie + Gewerbe",
-  "Schulen + Bildung",
-  "Hotel + Gastronomie",
-  "Denkmalpflege",
-  "Energetische Sanierung",
-  "Kirchliche Bauten",
-];
-
-const STATS = [
-  { zahl: "30+", label: "Jahre Erfahrung" },
-  { zahl: "200+", label: "Projekte" },
-  { zahl: "1", label: "Region" },
-];
-
 export default function Home() {
-  const featured = featuredProjekte.slice(0, 3);
-
   return (
     <>
       <HeroSection />
@@ -53,49 +31,6 @@ export default function Home() {
       </section>
 
       <ProjectsSection />
-
-      {/* Featured Projects */}
-      <section id="projekte" className="bg-black py-section px-container">
-        <div className="max-w-site mx-auto">
-          <div className="flex items-end justify-between mb-10">
-            <h2 className="font-display font-bold text-white text-[clamp(1.25rem,3vw,2rem)] tracking-tight">
-              Ausgewählte Projekte
-            </h2>
-            <Link
-              href="/projekte"
-              className="font-body text-sm text-grau hover:text-white transition-colors duration-200"
-            >
-              Alle Projekte&nbsp;→
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            {featured.map((projekt) => (
-              <ProjectCard
-                key={projekt.id}
-                projekt={projekt}
-                variant="featured"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Services Strip */}
-      <section className="bg-white border-t border-black/5 py-14 px-container">
-        <div className="max-w-site mx-auto">
-          <ScrollReveal className="flex flex-wrap gap-2.5 md:gap-3">
-            {SERVICES.map((s) => (
-              <span
-                key={s}
-                className="font-body font-medium text-xs md:text-sm border border-anthrazit px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all duration-300"
-              >
-                {s}
-              </span>
-            ))}
-          </ScrollReveal>
-        </div>
-      </section>
 
       {/* Chronologie Teaser */}
       <section className="relative bg-[#0D0D0D] overflow-hidden py-32 px-10 md:px-20">
